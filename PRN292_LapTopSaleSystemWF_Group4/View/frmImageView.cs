@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PRN292_LapTopSaleSystemWF_Group4.Model;
+using Image = PRN292_LapTopSaleSystemWF_Group4.Model.Image;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.View
 {
@@ -17,6 +18,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         frmManegement main;
         int id = -1;
+        Image image;
         public frmImageView(frmManegement main)
         {
             InitializeComponent();
@@ -84,12 +86,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void dtTableBrand_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);            
+            this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
+            //this.image = db.Images.FirstOrDefault(x => x.ID == this.id);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            new InsertUpImage(true, 0, main).Show();
+            this.Dispose();
         }
     }
 }

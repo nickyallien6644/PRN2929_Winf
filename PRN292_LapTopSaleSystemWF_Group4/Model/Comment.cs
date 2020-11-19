@@ -24,5 +24,15 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
     
         public virtual Product Product { get; set; }
         public virtual User User { get; set; }
+
+        public Comment(string content, DateTime date, bool accept, bool active, int? userID, int? productID)
+        {
+            Content = content;
+            this.date = date;
+            Accept = accept;
+            Active = active;
+            UserID = userID;
+            ProductID = productID;
+        }
     }
 }

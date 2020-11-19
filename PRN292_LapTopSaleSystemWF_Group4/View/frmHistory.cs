@@ -20,6 +20,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         public frmHistory(frmManegement main)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             this.main = main;
             load();
             getValue();

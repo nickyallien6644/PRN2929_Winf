@@ -226,6 +226,12 @@
     <Compile Include="View\frmCateView.Designer.cs">
       <DependentUpon>frmCateView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmFeedback.Designer.cs">
+      <DependentUpon>frmFeedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,17 +274,11 @@
     <Compile Include="View\frmUserView.Designer.cs">
       <DependentUpon>frmUserView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ImagesLoad.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ImagesLoad.Designer.cs">
-      <DependentUpon>ImagesLoad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\InsertUpdateImages.cs">
+    <Compile Include="View\InsertUpFeedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\InsertUpdateImages.Designer.cs">
-      <DependentUpon>InsertUpdateImages.cs</DependentUpon>
+    <Compile Include="View\InsertUpFeedback.Designer.cs">
+      <DependentUpon>InsertUpFeedback.cs</DependentUpon>
     </Compile>
     <Compile Include="View\InsertUpImage.cs">
       <SubType>Form</SubType>
@@ -330,6 +330,9 @@
     <EmbeddedResource Include="View\frmCateView.resx">
       <DependentUpon>frmCateView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\frmFeedback.resx">
+      <DependentUpon>frmFeedback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmHistory.resx">
       <DependentUpon>frmHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,11 +354,8 @@
     <EmbeddedResource Include="View\frmUserView.resx">
       <DependentUpon>frmUserView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ImagesLoad.resx">
-      <DependentUpon>ImagesLoad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\InsertUpdateImages.resx">
-      <DependentUpon>InsertUpdateImages.cs</DependentUpon>
+    <EmbeddedResource Include="View\InsertUpFeedback.resx">
+      <DependentUpon>InsertUpFeedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InsertUpImage.resx">
       <DependentUpon>InsertUpImage.cs</DependentUpon>

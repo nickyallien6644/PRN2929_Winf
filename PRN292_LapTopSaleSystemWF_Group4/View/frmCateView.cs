@@ -42,12 +42,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
-        private void dtTableBrand_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
-            this.category = db.Categories.FirstOrDefault(c => c.ID == this.id);
-        }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
@@ -103,7 +97,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             if (this.id < 0)
             {
-                MessageBox.Show("Please choice brand to update");
+                MessageBox.Show("Please choice category to update");
             }
             else
             {
@@ -116,7 +110,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             if (this.id < 0)
             {
-                MessageBox.Show("Please choice brand to delete");
+                MessageBox.Show("Please choice category to delete");
             }
             else
             {
@@ -167,6 +161,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 excelApp.Columns.AutoFit();
                 excelApp.Visible = true;
             }
+        }
+
+        private void dtTableBrand_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
+            this.category = db.Categories.FirstOrDefault(b => b.ID == this.id);
         }
     }
 }

@@ -222,5 +222,41 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
             this.product = db.Products.FirstOrDefault(c => c.ID == this.id);
         }
+
+        private void cbbActive_CheckedChanged(object sender, EventArgs e)
+        {
+            var list = 
+                from product in db.Products
+                       join brand in db.Brands on
+                       product.BrandID equals brand.ID
+                       join category in db.Categories on
+                       product.CategoryID equals category.ID
+                       select new
+                       {
+                           ID = product.ID,
+                           Name = product.Name,
+                           Price = product.Price,
+                           Discount = product.Discount,
+                           Discription = product.Description,
+                           Features = product.Features,
+                           Active = product.Active,
+                           Brand = brand.Name,
+                           Category = category.Name,
+                           ProductDetail = product.ProductDetailID
+
+                       };
+            if (cbbActive.Checked)
+            {
+                dtTableBrand.DataSource = list.Where(x => x.Active == true).ToList();
+                dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            }
+            else
+            {
+                dtTableBrand.DataSource = list.Where(x => x.Active == false).ToList();
+                dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            }
+        }
     }
 }

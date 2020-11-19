@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnUpload = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.txtImage = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -52,19 +51,6 @@
             this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnClear.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(281, 162);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 39);
-            this.btnClear.TabIndex = 22;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // txtImage
             // 
             this.txtImage.Enabled = false;
@@ -78,7 +64,7 @@
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBack.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(170, 162);
+            this.btnBack.Location = new System.Drawing.Point(257, 162);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 39);
             this.btnBack.TabIndex = 18;
@@ -91,7 +77,7 @@
             this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSubmit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(39, 162);
+            this.btnSubmit.Location = new System.Drawing.Point(64, 162);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(96, 39);
             this.btnSubmit.TabIndex = 17;
@@ -153,7 +139,6 @@
             this.ClientSize = new System.Drawing.Size(401, 213);
             this.Controls.Add(this.cbbProduct);
             this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtImage);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSubmit);
@@ -170,7 +155,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnUpload;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TextBox txtImage;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSubmit;

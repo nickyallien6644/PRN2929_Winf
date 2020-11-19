@@ -21,9 +21,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         public frmUserView(frmManegement main)
         {
             InitializeComponent();
-            load();
+            this.LookAndFeel.SetSkinStyle("Dark Side");
+            this.WindowState = FormWindowState.Maximized;
+            dtTableBrand.ForeColor = Color.Black;
             this.main = main;
-            
+            load();
         }
 
         public void load()
@@ -43,12 +45,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             dtTableBrand.DataSource = list.ToList();
             dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-        }
-
-        private void dtTableBrand_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
-            this.user = db.Users.FirstOrDefault(b => b.ID == this.id);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -181,6 +177,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 excelApp.Columns.AutoFit();
                 excelApp.Visible = true;
             }
+        }
+
+        private void dtTableBrand_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
+            this.user = (User)db.Users.FirstOrDefault(x => x.ID == this.id);
         }
     }
 }

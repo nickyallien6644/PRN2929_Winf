@@ -58,12 +58,12 @@
             this.dtTableBrand.AllowUserToAddRows = false;
             this.dtTableBrand.AllowUserToDeleteRows = false;
             this.dtTableBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtTableBrand.Location = new System.Drawing.Point(0, 13);
+            this.dtTableBrand.Location = new System.Drawing.Point(0, 0);
             this.dtTableBrand.Margin = new System.Windows.Forms.Padding(4);
             this.dtTableBrand.Name = "dtTableBrand";
             this.dtTableBrand.ReadOnly = true;
             this.dtTableBrand.RowHeadersWidth = 51;
-            this.dtTableBrand.Size = new System.Drawing.Size(1457, 716);
+            this.dtTableBrand.Size = new System.Drawing.Size(1457, 729);
             this.dtTableBrand.TabIndex = 16;
             // 
             // label5

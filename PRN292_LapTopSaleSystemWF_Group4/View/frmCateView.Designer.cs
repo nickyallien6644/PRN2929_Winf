@@ -34,11 +34,11 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dtTableBrand = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.cbbActive = new System.Windows.Forms.CheckBox();
+            this.dtTableBrand = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).BeginInit();
             this.SuspendLayout();
@@ -120,20 +120,6 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dtTableBrand
-            // 
-            this.dtTableBrand.AllowUserToAddRows = false;
-            this.dtTableBrand.AllowUserToDeleteRows = false;
-            this.dtTableBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtTableBrand.Location = new System.Drawing.Point(0, 13);
-            this.dtTableBrand.Margin = new System.Windows.Forms.Padding(4);
-            this.dtTableBrand.Name = "dtTableBrand";
-            this.dtTableBrand.ReadOnly = true;
-            this.dtTableBrand.RowHeadersWidth = 51;
-            this.dtTableBrand.Size = new System.Drawing.Size(1457, 716);
-            this.dtTableBrand.TabIndex = 16;
-            this.dtTableBrand.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtTableBrand_CellMouseClick);
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Black;
@@ -160,6 +146,20 @@
             this.cbbActive.UseVisualStyleBackColor = true;
             this.cbbActive.CheckedChanged += new System.EventHandler(this.cbbActive_CheckedChanged);
             // 
+            // dtTableBrand
+            // 
+            this.dtTableBrand.AllowUserToAddRows = false;
+            this.dtTableBrand.AllowUserToDeleteRows = false;
+            this.dtTableBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtTableBrand.Location = new System.Drawing.Point(-1, 0);
+            this.dtTableBrand.Name = "dtTableBrand";
+            this.dtTableBrand.ReadOnly = true;
+            this.dtTableBrand.RowHeadersWidth = 51;
+            this.dtTableBrand.RowTemplate.Height = 24;
+            this.dtTableBrand.Size = new System.Drawing.Size(1465, 733);
+            this.dtTableBrand.TabIndex = 24;
+            this.dtTableBrand.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtTableBrand_CellMouseClick_1);
+            // 
             // frmCateView
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -167,12 +167,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1815, 730);
+            this.Controls.Add(this.dtTableBrand);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dtTableBrand);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cbbActive);
             this.Name = "frmCateView";
@@ -193,10 +193,10 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dtTableBrand;
         private System.Windows.Forms.Button btnSearch;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.CheckBox cbbActive;
+        private System.Windows.Forms.DataGridView dtTableBrand;
     }
 }

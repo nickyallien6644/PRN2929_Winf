@@ -21,6 +21,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         frmProductView product;
         frmUserView userView;
         frmHistory history;
+        frmImageView image;
+        frmFeedback feedback;
 
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         public frmManegement(User user)
@@ -94,6 +96,22 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             Test111 report = new Test111();
             report.RequestParameters = false;
             report.ExportToPdf("Test.pdf");
+        }
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            image = new frmImageView(this);
+            image.MdiParent = this;
+            image.WindowState = FormWindowState.Maximized;
+            image.Show();
+        }
+
+        private void btnFeedback_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            feedback = new frmFeedback(this);
+            feedback.MdiParent = this;
+            feedback.WindowState = FormWindowState.Maximized;
+            feedback.Show();
         }
     }
 }

@@ -84,6 +84,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            frmCateView form = new frmCateView(main);
+            form.MdiParent = main;
+            form.Show();
+            form.load();
             this.Dispose();
         }
     }

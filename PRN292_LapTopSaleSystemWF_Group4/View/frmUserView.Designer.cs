@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dtTableBrand = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.btnExport = new System.Windows.Forms.Button();
@@ -42,32 +40,11 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).BeginInit();
+            this.dtTableBrand = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dtTableBrand
-            // 
-            this.dtTableBrand.AllowUserToAddRows = false;
-            this.dtTableBrand.AllowUserToDeleteRows = false;
-            this.dtTableBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtTableBrand.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dtTableBrand.Location = new System.Drawing.Point(0, 1);
-            this.dtTableBrand.Margin = new System.Windows.Forms.Padding(4);
-            this.dtTableBrand.Name = "dtTableBrand";
-            this.dtTableBrand.ReadOnly = true;
-            this.dtTableBrand.RowHeadersWidth = 51;
-            this.dtTableBrand.Size = new System.Drawing.Size(1457, 731);
-            this.dtTableBrand.TabIndex = 16;
-            this.dtTableBrand.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtTableBrand_CellMouseClick);
             // 
             // btnExport
             // 
@@ -191,6 +168,20 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // dtTableBrand
+            // 
+            this.dtTableBrand.AllowUserToAddRows = false;
+            this.dtTableBrand.AllowUserToDeleteRows = false;
+            this.dtTableBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtTableBrand.Location = new System.Drawing.Point(0, 1);
+            this.dtTableBrand.Margin = new System.Windows.Forms.Padding(4);
+            this.dtTableBrand.Name = "dtTableBrand";
+            this.dtTableBrand.ReadOnly = true;
+            this.dtTableBrand.RowHeadersWidth = 51;
+            this.dtTableBrand.Size = new System.Drawing.Size(1457, 730);
+            this.dtTableBrand.TabIndex = 23;
+            this.dtTableBrand.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtTableBrand_CellMouseClick);
+            // 
             // frmUserView
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -200,26 +191,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1809, 730);
+            this.Controls.Add(this.dtTableBrand);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dtTableBrand);
             this.Name = "frmUserView";
             this.Text = "frmUserView";
-            ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dtTableBrand;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button btnExport;
@@ -232,5 +222,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dtTableBrand;
     }
 }

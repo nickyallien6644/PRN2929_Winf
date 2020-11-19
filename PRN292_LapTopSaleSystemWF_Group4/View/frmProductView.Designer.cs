@@ -55,9 +55,9 @@
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1464, 13);
+            this.groupBox1.Location = new System.Drawing.Point(1464, -4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 77);
+            this.groupBox1.Size = new System.Drawing.Size(345, 94);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
@@ -75,10 +75,10 @@
             this.btnExport.BackColor = System.Drawing.Color.Black;
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.Location = new System.Drawing.Point(1544, 410);
+            this.btnExport.Location = new System.Drawing.Point(1545, 447);
             this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(186, 48);
+            this.btnExport.Size = new System.Drawing.Size(186, 65);
             this.btnExport.TabIndex = 31;
             this.btnExport.Text = "Export Excel";
             this.btnExport.UseVisualStyleBackColor = false;
@@ -89,10 +89,10 @@
             this.btnDelete.BackColor = System.Drawing.Color.Black;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1471, 354);
+            this.btnDelete.Location = new System.Drawing.Point(1471, 374);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(125, 48);
+            this.btnDelete.Size = new System.Drawing.Size(125, 65);
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -103,10 +103,10 @@
             this.btnUpdate.BackColor = System.Drawing.Color.Black;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(1674, 298);
+            this.btnUpdate.Location = new System.Drawing.Point(1674, 301);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(129, 48);
+            this.btnUpdate.Size = new System.Drawing.Size(129, 65);
             this.btnUpdate.TabIndex = 27;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -117,10 +117,10 @@
             this.btnAdd.BackColor = System.Drawing.Color.Black;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(1471, 298);
+            this.btnAdd.Location = new System.Drawing.Point(1471, 301);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(125, 48);
+            this.btnAdd.Size = new System.Drawing.Size(125, 65);
             this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -131,12 +131,12 @@
             this.dtTableBrand.AllowUserToAddRows = false;
             this.dtTableBrand.AllowUserToDeleteRows = false;
             this.dtTableBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtTableBrand.Location = new System.Drawing.Point(0, 13);
+            this.dtTableBrand.Location = new System.Drawing.Point(0, -4);
             this.dtTableBrand.Margin = new System.Windows.Forms.Padding(4);
             this.dtTableBrand.Name = "dtTableBrand";
             this.dtTableBrand.ReadOnly = true;
             this.dtTableBrand.RowHeadersWidth = 51;
-            this.dtTableBrand.Size = new System.Drawing.Size(1457, 716);
+            this.dtTableBrand.Size = new System.Drawing.Size(1457, 733);
             this.dtTableBrand.TabIndex = 24;
             this.dtTableBrand.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtTableBrand_CellMouseClick);
             // 
@@ -145,9 +145,9 @@
             this.btnSearch.BackColor = System.Drawing.Color.Black;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1674, 353);
+            this.btnSearch.Location = new System.Drawing.Point(1674, 373);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(129, 49);
+            this.btnSearch.Size = new System.Drawing.Size(129, 66);
             this.btnSearch.TabIndex = 26;
             this.btnSearch.Text = "Refresh";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -158,12 +158,13 @@
             this.cbbActive.AutoSize = true;
             this.cbbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbActive.ForeColor = System.Drawing.Color.White;
-            this.cbbActive.Location = new System.Drawing.Point(1471, 258);
+            this.cbbActive.Location = new System.Drawing.Point(1471, 264);
             this.cbbActive.Name = "cbbActive";
             this.cbbActive.Size = new System.Drawing.Size(105, 33);
             this.cbbActive.TabIndex = 30;
             this.cbbActive.Text = "Active";
             this.cbbActive.UseVisualStyleBackColor = true;
+            this.cbbActive.CheckedChanged += new System.EventHandler(this.cbbActive_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -173,9 +174,9 @@
             this.groupBox2.Controls.Add(this.cbbBrand);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(1465, 96);
+            this.groupBox2.Location = new System.Drawing.Point(1465, 79);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(344, 162);
+            this.groupBox2.Size = new System.Drawing.Size(344, 179);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sort";
@@ -222,7 +223,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1809, 730);
+            this.ClientSize = new System.Drawing.Size(1811, 730);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExport);

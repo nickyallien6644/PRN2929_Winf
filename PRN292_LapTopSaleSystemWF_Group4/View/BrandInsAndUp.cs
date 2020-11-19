@@ -75,6 +75,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 frmBrandView form = new frmBrandView(main);
                 form.MdiParent = main;
                 form.Show();
+                form.WindowState = FormWindowState.Maximized;
                 form.load();
                 this.Dispose();
             }
@@ -88,7 +89,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Dispose();           
+            frmBrandView form = new frmBrandView(main);
+            form.MdiParent = main;
+            form.Show();
+            form.WindowState = FormWindowState.Maximized;
+            form.load();
+            this.Dispose();
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
