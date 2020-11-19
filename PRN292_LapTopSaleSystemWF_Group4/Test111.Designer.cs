@@ -76,14 +76,13 @@
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
-            this.DetailReport1 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.DetailReport1 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.GroupHeader2 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.Detail2 = new DevExpress.XtraReports.UI.DetailBand();
             this.table3 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
             this.tableCell19 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -93,14 +92,15 @@
             this.tableCell23 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell25 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.checkBox2 = new DevExpress.XtraReports.UI.XRCheckBox();
+            this.Detail2 = new DevExpress.XtraReports.UI.DetailBand();
+            this.user = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPanel1 = new DevExpress.XtraReports.UI.XRPanel();
-            this.user = new DevExpress.XtraReports.UI.XRLabel();
+            this.checkBox2 = new DevExpress.XtraReports.UI.XRCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.table3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -255,29 +255,6 @@
             this.pageInfo2});
             this.BottomMargin.Name = "BottomMargin";
             // 
-            // ReportHeader
-            // 
-            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.label1});
-            this.ReportHeader.HeightF = 60F;
-            this.ReportHeader.Name = "ReportHeader";
-            // 
-            // Detail
-            // 
-            this.Detail.Expanded = false;
-            this.Detail.HeightF = 0F;
-            this.Detail.Name = "Detail";
-            // 
-            // DetailReport1
-            // 
-            this.DetailReport1.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
-            this.GroupHeader2,
-            this.Detail2});
-            this.DetailReport1.DataMember = "Users.UsersOrders";
-            this.DetailReport1.DataSource = this.sqlDataSource1;
-            this.DetailReport1.Level = 0;
-            this.DetailReport1.Name = "DetailReport1";
-            // 
             // pageInfo1
             // 
             this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(5F, 5F);
@@ -295,6 +272,13 @@
             this.pageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.pageInfo2.TextFormatString = "Page {0} of {1}";
             // 
+            // ReportHeader
+            // 
+            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.label1});
+            this.ReportHeader.HeightF = 60F;
+            this.ReportHeader.Name = "ReportHeader";
+            // 
             // label1
             // 
             this.label1.LocationFloat = new DevExpress.Utils.PointFloat(5F, 5F);
@@ -303,6 +287,22 @@
             this.label1.StyleName = "Title";
             this.label1.Text = "Report Title";
             // 
+            // Detail
+            // 
+            this.Detail.Expanded = false;
+            this.Detail.HeightF = 0F;
+            this.Detail.Name = "Detail";
+            // 
+            // DetailReport1
+            // 
+            this.DetailReport1.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.GroupHeader2,
+            this.Detail2});
+            this.DetailReport1.DataMember = "Users.UsersOrders";
+            this.DetailReport1.DataSource = this.sqlDataSource1;
+            this.DetailReport1.Level = 0;
+            this.DetailReport1.Name = "DetailReport1";
+            // 
             // GroupHeader2
             // 
             this.GroupHeader2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -310,19 +310,6 @@
             this.GroupHeader2.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
             this.GroupHeader2.HeightF = 28F;
             this.GroupHeader2.Name = "GroupHeader2";
-            // 
-            // Detail2
-            // 
-            this.Detail2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.user,
-            this.xrLabel1,
-            this.xrLabel2,
-            this.xrLabel3,
-            this.xrLabel4,
-            this.xrLabel5,
-            this.xrPanel1});
-            this.Detail2.HeightF = 34.83332F;
-            this.Detail2.Name = "Detail2";
             // 
             // table3
             // 
@@ -406,16 +393,45 @@
             this.tableCell25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.tableCell25.Weight = 0.14835448044996996D;
             // 
-            // checkBox2
+            // Detail2
             // 
-            this.checkBox2.AnchorHorizontal = ((DevExpress.XtraReports.UI.HorizontalAnchorStyles)((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left | DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right)));
-            this.checkBox2.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
-            this.checkBox2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "CheckBoxState", "[Active]")});
-            this.checkBox2.GlyphOptions.Alignment = DevExpress.Utils.HorzAlignment.Center;
-            this.checkBox2.LocationFloat = new DevExpress.Utils.PointFloat(2.083333F, 0F);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.SizeF = new System.Drawing.SizeF(84.15479F, 25F);
+            this.Detail2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.user,
+            this.xrLabel1,
+            this.xrLabel2,
+            this.xrLabel3,
+            this.xrLabel4,
+            this.xrLabel5,
+            this.xrPanel1});
+            this.Detail2.HeightF = 34.83332F;
+            this.Detail2.Name = "Detail2";
+            // 
+            // user
+            // 
+            this.user.BackColor = System.Drawing.Color.Transparent;
+            this.user.BorderColor = System.Drawing.Color.Transparent;
+            this.user.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.user.Borders = DevExpress.XtraPrinting.BorderSide.Left;
+            this.user.BorderWidth = 2F;
+            this.user.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[UserID]")});
+            this.user.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.user.ForeColor = System.Drawing.Color.Black;
+            this.user.LocationFloat = new DevExpress.Utils.PointFloat(553.5696F, 0F);
+            this.user.Name = "user";
+            this.user.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
+            this.user.SizeF = new System.Drawing.SizeF(96.43042F, 25F);
+            this.user.StyleName = "DetailData2";
+            this.user.StylePriority.UseBackColor = false;
+            this.user.StylePriority.UseBorderColor = false;
+            this.user.StylePriority.UseBorderDashStyle = false;
+            this.user.StylePriority.UseBorders = false;
+            this.user.StylePriority.UseBorderWidth = false;
+            this.user.StylePriority.UseFont = false;
+            this.user.StylePriority.UseForeColor = false;
+            this.user.StylePriority.UsePadding = false;
+            this.user.StylePriority.UseTextAlignment = false;
+            this.user.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel1
             // 
@@ -577,32 +593,16 @@
             this.xrPanel1.StylePriority.UsePadding = false;
             this.xrPanel1.StylePriority.UseTextAlignment = false;
             // 
-            // user
+            // checkBox2
             // 
-            this.user.BackColor = System.Drawing.Color.Transparent;
-            this.user.BorderColor = System.Drawing.Color.Transparent;
-            this.user.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.user.Borders = DevExpress.XtraPrinting.BorderSide.Left;
-            this.user.BorderWidth = 2F;
-            this.user.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Fullname]")});
-            this.user.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.user.ForeColor = System.Drawing.Color.Black;
-            this.user.LocationFloat = new DevExpress.Utils.PointFloat(553.5696F, 0F);
-            this.user.Name = "user";
-            this.user.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
-            this.user.SizeF = new System.Drawing.SizeF(96.43042F, 25F);
-            this.user.StyleName = "DetailData2";
-            this.user.StylePriority.UseBackColor = false;
-            this.user.StylePriority.UseBorderColor = false;
-            this.user.StylePriority.UseBorderDashStyle = false;
-            this.user.StylePriority.UseBorders = false;
-            this.user.StylePriority.UseBorderWidth = false;
-            this.user.StylePriority.UseFont = false;
-            this.user.StylePriority.UseForeColor = false;
-            this.user.StylePriority.UsePadding = false;
-            this.user.StylePriority.UseTextAlignment = false;
-            this.user.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.checkBox2.AnchorHorizontal = ((DevExpress.XtraReports.UI.HorizontalAnchorStyles)((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left | DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right)));
+            this.checkBox2.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
+            this.checkBox2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "CheckBoxState", "[Active]")});
+            this.checkBox2.GlyphOptions.Alignment = DevExpress.Utils.HorzAlignment.Center;
+            this.checkBox2.LocationFloat = new DevExpress.Utils.PointFloat(2.083333F, 0F);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.SizeF = new System.Drawing.SizeF(84.15479F, 25F);
             // 
             // Test111
             // 

@@ -245,14 +245,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void dtTableBrand_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
-            this.comment = (Comment)db.Comments.First(x => x.ID == this.id);
-            this.product1 = (Product)db.Products.FirstOrDefault(x => x.ID == comment.ProductID);
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {           
-            new InsertUpFeedback(this.product1, main.getUserAccount().ID, main).Show();
-            this.Dispose();
+            /*this.comment = (Comment)db.Comments.First(x => x.ID == this.id);
+            this.product1 = (Product)db.Products.FirstOrDefault(x => x.ID == comment.ProductID);*/
         }
     }
 }

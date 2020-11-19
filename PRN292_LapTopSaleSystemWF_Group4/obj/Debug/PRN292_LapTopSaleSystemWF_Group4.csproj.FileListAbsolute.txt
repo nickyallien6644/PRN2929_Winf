@@ -1482,3 +1482,7 @@ C:\Users\MSI\Desktop\PRN2929_Winf\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\`.e
 C:\Users\MSI\Desktop\PRN2929_Winf\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\`.pdb
 C:\Users\MSI\Desktop\PRN2929_Winf\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\PRN292_LapTopSaleSystemWF_Group4.View.frmFeedback.resources
 C:\Users\MSI\Desktop\PRN2929_Winf\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\PRN292_LapTopSaleSystemWF_Group4.View.InsertUpFeedback.resources
+C:\Users\MSI\Desktop\PRN2929_Winf\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\`.exe.manifest
+C:\Users\MSI\Desktop\PRN2929_Winf\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\`.application
+C:\Users\MSI\Desktop\PRN2929_Winf\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\`.exe.manifest
+C:\Users\MSI\Desktop\PRN2929_Winf\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\`.application
