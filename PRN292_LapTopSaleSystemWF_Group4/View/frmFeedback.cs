@@ -17,6 +17,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         frmManegement main;
         Comment comment;
+        Product product1;
         int id = -1;
         public frmFeedback(frmManegement main)
         {
@@ -34,9 +35,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             var list =
                    from comment in db.Comments
                    join user in db.Users on
-                   comment.UserID equals user.ID
+                   (int)comment.UserID equals user.ID
                    join product in db.Products on
-                   comment.ProductID equals product.ID
+                   (int)comment.ProductID equals product.ID
                    select new
                    {
                        ID = comment.ID,
@@ -84,9 +85,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             var list =
                    from comment in db.Comments
                    join user in db.Users on
-                   comment.UserID equals user.ID
+                   (int)comment.UserID equals user.ID
                    join product in db.Products on
-                   comment.ProductID equals product.ID
+                   (int)comment.ProductID equals product.ID
                    select new
                    {
                        ID = comment.ID,
@@ -111,25 +112,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            new InsertUpFeedback(true, null, main).Show();
-            this.Dispose();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if(this.id < 0)
-            {
-                MessageBox.Show("Please select before update");
-            }
-            else
-            {
-                new InsertUpFeedback(false, comment, main).Show();
-                this.Dispose();
-            }
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             load();
@@ -141,9 +123,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             var list =
                   from comment in db.Comments
                   join user in db.Users on
-                  comment.UserID equals user.ID
+                  (int)comment.UserID equals user.ID
                   join product in db.Products on
-                  comment.ProductID equals product.ID
+                  (int)comment.ProductID equals product.ID
                   where comment.date.Day == day
                   select new
                   {
@@ -166,9 +148,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             var list =
                   from comment in db.Comments
                   join user in db.Users on
-                  comment.UserID equals user.ID
+                  (int)comment.UserID equals user.ID
                   join product in db.Products on
-                  comment.ProductID equals product.ID
+                  (int)comment.ProductID equals product.ID
                   where comment.date.Month == month
                   select new
                   {
@@ -191,9 +173,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             var list =
                   from comment in db.Comments
                   join user in db.Users on
-                  comment.UserID equals user.ID
+                  (int)comment.UserID equals user.ID
                   join product in db.Products on
-                  comment.ProductID equals product.ID
+                  (int)comment.ProductID equals product.ID
                   where comment.date.Year == year
                   select new
                   {
@@ -216,10 +198,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             var list =
                    from comment in db.Comments
                    join user in db.Users on
-                   comment.UserID equals user.ID
+                   (int)comment.UserID equals user.ID
                    where user.Fullname == userName
                    join product in db.Products on
-                   comment.ProductID equals product.ID
+                   (int)comment.ProductID equals product.ID
                    select new
                    {
                        ID = comment.ID,
@@ -263,7 +245,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void dtTableBrand_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
-            this.comment = db.Comments.FirstOrDefault(x => x.ID == this.id);
+            this.comment = (Comment)db.Comments.First(x => x.ID == this.id);
+            this.product1 = (Product)db.Products.FirstOrDefault(x => x.ID == comment.ProductID);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {           
+            new InsertUpFeedback(this.product1, main.getUserAccount().ID, main).Show();
+            this.Dispose();
         }
     }
 }

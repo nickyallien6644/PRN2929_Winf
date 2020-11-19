@@ -36,6 +36,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.btnLogout.Caption = "Logout, " + user.Fullname;
         }
 
+        public User getUserAccount()
+        {
+            return this.user;
+        }
+
         private void btnBrand_ItemClick(object sender, ItemClickEventArgs e)
         {
             brand = new frmBrandView(this);
