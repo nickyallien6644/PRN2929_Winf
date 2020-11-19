@@ -52,7 +52,6 @@
             this.cbbProduct.Name = "cbbProduct";
             this.cbbProduct.Size = new System.Drawing.Size(214, 24);
             this.cbbProduct.TabIndex = 32;
-            this.cbbProduct.SelectedIndexChanged += new System.EventHandler(this.cbbProduct_SelectedIndexChanged);
             // 
             // btnBack
             // 
@@ -123,7 +122,6 @@
             this.cbbUser.Name = "cbbUser";
             this.cbbUser.Size = new System.Drawing.Size(214, 24);
             this.cbbUser.TabIndex = 34;
-            this.cbbUser.SelectedIndexChanged += new System.EventHandler(this.cbbUser_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -146,7 +144,6 @@
             this.cbActive.TabIndex = 35;
             this.cbActive.Text = " ";
             this.cbActive.UseVisualStyleBackColor = true;
-            this.cbActive.CheckedChanged += new System.EventHandler(this.cbActive_CheckedChanged);
             // 
             // cbAccept
             // 
@@ -157,7 +154,6 @@
             this.cbAccept.TabIndex = 36;
             this.cbAccept.Text = " ";
             this.cbAccept.UseVisualStyleBackColor = true;
-            this.cbAccept.CheckedChanged += new System.EventHandler(this.cbImage_CheckedChanged);
             // 
             // label4
             // 
@@ -177,7 +173,6 @@
             this.dateDate.Name = "dateDate";
             this.dateDate.Size = new System.Drawing.Size(214, 23);
             this.dateDate.TabIndex = 38;
-            this.dateDate.ValueChanged += new System.EventHandler(this.dateDate_ValueChanged);
             // 
             // label5
             // 

@@ -17,6 +17,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         frmManegement main;
         Comment comment;
+        int id = -1;
         public frmFeedback(frmManegement main)
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                        User = user.Fullname,
                        Product = product.Name
                    };
-            dtTableBrand.DataSource = db.Comments.ToList();
+            dtTableBrand.DataSource = list.ToList();
             dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
@@ -118,8 +119,15 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            new InsertUpFeedback(false, comment, main).Show();
-            this.Dispose();
+            if(this.id < 0)
+            {
+                MessageBox.Show("Please select before update");
+            }
+            else
+            {
+                new InsertUpFeedback(false, comment, main).Show();
+                this.Dispose();
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -131,23 +139,22 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             int day = (int)cbbDay.SelectedValue;
             var list =
-                from orderdetail in db.OrderDetails
-                join order in db.Orders on
-                orderdetail.OrderID equals order.ID
-                join user in db.Users on
-                order.UserID equals user.ID
-                join product in db.Products on
-                orderdetail.ProductID equals product.ID
-                where order.date.Day == day
-                select new
-                {
-                    ID = orderdetail.ID,
-                    Quantity = orderdetail.Quantity,
-                    Price = orderdetail.Price,
-                    Product = product.Name,
-                    User = user.Fullname,
-                    Date = order.date
-                };
+                  from comment in db.Comments
+                  join user in db.Users on
+                  comment.UserID equals user.ID
+                  join product in db.Products on
+                  comment.ProductID equals product.ID
+                  where comment.date.Day == day
+                  select new
+                  {
+                      ID = comment.ID,
+                      Content = comment.Content,
+                      Date = comment.date,
+                      Accept = comment.Accept,
+                      Active = comment.Active,
+                      User = user.Fullname,
+                      Product = product.Name
+                  };
             dtTableBrand.DataSource = list.ToList();
             dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -157,23 +164,22 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             int month = (int)cbbMonth.SelectedValue;
             var list =
-                from orderdetail in db.OrderDetails
-                join order in db.Orders on
-                orderdetail.OrderID equals order.ID
-                join user in db.Users on
-                order.UserID equals user.ID
-                join product in db.Products on
-                orderdetail.ProductID equals product.ID
-                where order.date.Month == month
-                select new
-                {
-                    ID = orderdetail.ID,
-                    Quantity = orderdetail.Quantity,
-                    Price = orderdetail.Price,
-                    Product = product.Name,
-                    User = user.Fullname,
-                    Date = order.date
-                };
+                  from comment in db.Comments
+                  join user in db.Users on
+                  comment.UserID equals user.ID
+                  join product in db.Products on
+                  comment.ProductID equals product.ID
+                  where comment.date.Month == month
+                  select new
+                  {
+                      ID = comment.ID,
+                      Content = comment.Content,
+                      Date = comment.date,
+                      Accept = comment.Accept,
+                      Active = comment.Active,
+                      User = user.Fullname,
+                      Product = product.Name
+                  };
             dtTableBrand.DataSource = list.ToList();
             dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -183,23 +189,22 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             int year = (int)cbbYear.SelectedValue;
             var list =
-                from orderdetail in db.OrderDetails
-                join order in db.Orders on
-                orderdetail.OrderID equals order.ID
-                join user in db.Users on
-                order.UserID equals user.ID
-                join product in db.Products on
-                orderdetail.ProductID equals product.ID
-                where order.date.Year == year
-                select new
-                {
-                    ID = orderdetail.ID,
-                    Quantity = orderdetail.Quantity,
-                    Price = orderdetail.Price,
-                    Product = product.Name,
-                    User = user.Fullname,
-                    Date = order.date
-                };
+                  from comment in db.Comments
+                  join user in db.Users on
+                  comment.UserID equals user.ID
+                  join product in db.Products on
+                  comment.ProductID equals product.ID
+                  where comment.date.Year == year
+                  select new
+                  {
+                      ID = comment.ID,
+                      Content = comment.Content,
+                      Date = comment.date,
+                      Accept = comment.Accept,
+                      Active = comment.Active,
+                      User = user.Fullname,
+                      Product = product.Name
+                  };
             dtTableBrand.DataSource = list.ToList();
             dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -225,14 +230,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                        User = user.Fullname,
                        Product = product.Name
                    };
-            dtTableBrand.DataSource = db.Comments.ToList();
+            dtTableBrand.DataSource = list.ToList();
             dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void cbbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String productName = ((Product)cbbUser.SelectedValue).Name;
+            String productName = ((Product)cbbProduct.SelectedValue).Name;
             var list =
                    from comment in db.Comments
                    join user in db.Users on
@@ -250,14 +255,15 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                        User = user.Fullname,
                        Product = product.Name
                    };
-            dtTableBrand.DataSource = db.Comments.ToList();
+            dtTableBrand.DataSource = list.ToList();
             dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void dtTableBrand_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
+            this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
+            this.comment = db.Comments.FirstOrDefault(x => x.ID == this.id);
         }
     }
 }

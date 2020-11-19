@@ -21,8 +21,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         public InsertUpFeedback(bool isInsert, Comment comment, frmManegement main)
         {
             InitializeComponent();
-            this.LookAndFeel.SetSkinStyle("Dark Side");
-            this.WindowState = FormWindowState.Maximized;
+            this.CenterToScreen();
             getValue();
 
             this.main = main;
@@ -82,6 +81,17 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 db.Comments.Add(new Comment(content, date, accept, active, user, product));
                 db.SaveChanges();
             }
+            else
+            {
+                Comment cmtEdit = db.Comments.FirstOrDefault(x => x.ID == comment.ID);
+                cmtEdit.Content = content;
+                cmtEdit.date = date;
+                cmtEdit.Accept = accept;
+                cmtEdit.Active = active;
+                cmtEdit.UserID = user;
+                cmtEdit.ProductID = product;
+                db.SaveChanges();
+            }
             frmFeedback feedback = new frmFeedback(main);
             feedback.MdiParent = main;
             feedback.Show();
@@ -98,31 +108,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             feedback.load();
             feedback.WindowState = FormWindowState.Maximized;
             this.Dispose();
-        }
-
-        private void cbbProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbbUser_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbActive_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbImage_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateDate_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
