@@ -1,0 +1,902 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23BCB9EE-7394-4C69-9378-C0824E1E8E7A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PRN292_LapTopSaleSystemWF_Group4</RootNamespace>
+    <AssemblyName>`</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>GlobalizationRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v20.1" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1" />
+    <Reference Include="DevExpress.Data.v20.1" />
+    <Reference Include="DevExpress.Diagram.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core" />
+    <Reference Include="DevExpress.Utils.v20.1" />
+    <Reference Include="DevExpress.XtraBars.v20.1" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core" />
+    <Reference Include="DevExpress.XtraDiagram.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\BrandDAO.cs" />
+    <Compile Include="DAO\CategoryDAO.cs" />
+    <Compile Include="DAO\productDAO.cs" />
+    <Compile Include="DAO\ProductDetailDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="Model\Brand.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Comment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\C__MigrationHistory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Image.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet25.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet26.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet26.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet28.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet28.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet29.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet30.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet30.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet32.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet32.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet33.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet33.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet34.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet34.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet35.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet35.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Validate\AuthenticationValidate.cs" />
+    <Compile Include="Validate\UserValidate.cs" />
+    <Compile Include="View\CategoriesLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CategoriesLoad.Designer.cs">
+      <DependentUpon>CategoriesLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProductDetail.Designer.cs">
+      <DependentUpon>frmProductDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmRegis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmRegis.Designer.cs">
+      <DependentUpon>frmRegis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductDetailLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ProductDetailLoad.Designer.cs">
+      <DependentUpon>ProductDetailLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BrandLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\BrandLoad.Designer.cs">
+      <DependentUpon>BrandLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ProductLoad.Designer.cs">
+      <DependentUpon>ProductLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserLoad.Designer.cs">
+      <DependentUpon>UserLoad.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\BrandLoad.resx">
+      <DependentUpon>BrandLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CategoriesLoad.resx">
+      <DependentUpon>CategoriesLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProductDetail.resx">
+      <DependentUpon>frmProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmRegis.resx">
+      <DependentUpon>frmRegis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProductDetailLoad.resx">
+      <DependentUpon>ProductDetailLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProductLoad.resx">
+      <DependentUpon>ProductLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserLoad.resx">
+      <DependentUpon>UserLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SaleLaptopSystemDataSet.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet.xss">
+      <DependentUpon>SaleLaptopSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet1.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet1.xss">
+      <DependentUpon>SaleLaptopSystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet10.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet10.xss">
+      <DependentUpon>SaleLaptopSystemDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet11.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet11.xss">
+      <DependentUpon>SaleLaptopSystemDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet12.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet12.xss">
+      <DependentUpon>SaleLaptopSystemDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet13.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet13.xss">
+      <DependentUpon>SaleLaptopSystemDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet14.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet14.xss">
+      <DependentUpon>SaleLaptopSystemDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet15.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet15.xss">
+      <DependentUpon>SaleLaptopSystemDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet16.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet16.xss">
+      <DependentUpon>SaleLaptopSystemDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet17.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet17.xss">
+      <DependentUpon>SaleLaptopSystemDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet18.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet18.xss">
+      <DependentUpon>SaleLaptopSystemDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet19.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet19.xss">
+      <DependentUpon>SaleLaptopSystemDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet2.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet2.xss">
+      <DependentUpon>SaleLaptopSystemDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet20.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet20.xss">
+      <DependentUpon>SaleLaptopSystemDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet21.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet21.xss">
+      <DependentUpon>SaleLaptopSystemDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet22.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet22.xss">
+      <DependentUpon>SaleLaptopSystemDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet23.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet23.xss">
+      <DependentUpon>SaleLaptopSystemDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet24.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet24.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet24.xss">
+      <DependentUpon>SaleLaptopSystemDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet25.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet25.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet25.xss">
+      <DependentUpon>SaleLaptopSystemDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet26.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet26.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet26.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet26.xss">
+      <DependentUpon>SaleLaptopSystemDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet27.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet27.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet27.xss">
+      <DependentUpon>SaleLaptopSystemDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet28.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet28.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet28.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet28.xss">
+      <DependentUpon>SaleLaptopSystemDataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet29.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet29.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet29.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet29.xss">
+      <DependentUpon>SaleLaptopSystemDataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet3.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet3.xss">
+      <DependentUpon>SaleLaptopSystemDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet30.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet30.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet30.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet30.xss">
+      <DependentUpon>SaleLaptopSystemDataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet31.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet31.xss">
+      <DependentUpon>SaleLaptopSystemDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet32.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet32.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet32.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet32.xss">
+      <DependentUpon>SaleLaptopSystemDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet33.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet33.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet33.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet33.xss">
+      <DependentUpon>SaleLaptopSystemDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet34.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet34.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet34.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet34.xss">
+      <DependentUpon>SaleLaptopSystemDataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet35.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet35.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet35.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet35.xss">
+      <DependentUpon>SaleLaptopSystemDataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet4.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet4.xss">
+      <DependentUpon>SaleLaptopSystemDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet5.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet5.xss">
+      <DependentUpon>SaleLaptopSystemDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet6.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet6.xss">
+      <DependentUpon>SaleLaptopSystemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet7.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet7.xss">
+      <DependentUpon>SaleLaptopSystemDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet8.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet8.xss">
+      <DependentUpon>SaleLaptopSystemDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet9.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet9.xss">
+      <DependentUpon>SaleLaptopSystemDataSet9.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-desk-laptop-computer-with-color-pink-purple-light-display_37129-941.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\tải xuống.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

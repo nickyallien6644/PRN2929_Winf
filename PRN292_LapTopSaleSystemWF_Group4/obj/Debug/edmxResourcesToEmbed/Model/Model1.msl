@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SaleLaptopSystemModelStoreContainer" CdmEntityContainer="SaleLaptopSystemEntities">
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.Brand">
+        <MappingFragment StoreEntitySet="Brands">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Accept" ColumnName="Accept" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.Image">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="image1" ColumnName="image" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="TotalQuantiy" ColumnName="TotalQuantiy" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductDetails">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.ProductDetail">
+        <MappingFragment StoreEntitySet="ProductDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Processor" ColumnName="Processor" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="Screen" ColumnName="Screen" />
+          <ScalarProperty Name="Storage" ColumnName="Storage" />
+          <ScalarProperty Name="Graphic" ColumnName="Graphic" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="OS" ColumnName="OS" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Connection" ColumnName="Connection" />
+          <ScalarProperty Name="Keyboard" ColumnName="Keyboard" />
+          <ScalarProperty Name="Battery" ColumnName="Battery" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Features" ColumnName="Features" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SaleLaptopSystemModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

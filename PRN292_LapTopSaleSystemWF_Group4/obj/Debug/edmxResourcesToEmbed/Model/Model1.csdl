@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SaleLaptopSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_dbo_Products_dbo_Brands_BrandID" FromRole="Brands" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_dbo_Products_dbo_Categories_CategoryID" FromRole="Categories" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Accept" Type="Boolean" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_dbo_Comments_dbo_Products_ProductID" FromRole="Comments" ToRole="Products" />
+    <NavigationProperty Name="User" Relationship="Self.FK_dbo_Comments_dbo_Users_UserID" FromRole="Comments" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_dbo_Images_dbo_Products_ProductID" FromRole="Images" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID" FromRole="OrderDetails" ToRole="Orders" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_dbo_OrderDetails_dbo_Products_ProductID" FromRole="OrderDetails" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TotalQuantiy" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Double" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID" FromRole="Orders" ToRole="OrderDetails" />
+    <NavigationProperty Name="User" Relationship="Self.FK_dbo_Orders_dbo_Users_UserID" FromRole="Orders" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Processor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RAM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Storage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Graphic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Connection" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keyboard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Battery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_dbo_Products_dbo_ProductDetails_ProductDetailID" FromRole="ProductDetails" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Discount" Type="Double" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Features" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="BrandID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="ProductDetailID" Type="Int32" />
+    <NavigationProperty Name="Brand" Relationship="Self.FK_dbo_Products_dbo_Brands_BrandID" FromRole="Products" ToRole="Brands" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_dbo_Products_dbo_Categories_CategoryID" FromRole="Products" ToRole="Categories" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_dbo_Comments_dbo_Products_ProductID" FromRole="Products" ToRole="Comments" />
+    <NavigationProperty Name="Images" Relationship="Self.FK_dbo_Images_dbo_Products_ProductID" FromRole="Products" ToRole="Images" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_dbo_OrderDetails_dbo_Products_ProductID" FromRole="Products" ToRole="OrderDetails" />
+    <NavigationProperty Name="ProductDetail" Relationship="Self.FK_dbo_Products_dbo_ProductDetails_ProductDetailID" FromRole="Products" ToRole="ProductDetails" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fullname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_dbo_Comments_dbo_Users_UserID" FromRole="Users" ToRole="Comments" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Users_UserID" FromRole="Users" ToRole="Orders" />
+  </EntityType>
+  <Association Name="FK_dbo_Products_dbo_Brands_BrandID">
+    <End Role="Brands" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Products_dbo_Categories_CategoryID">
+    <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Comments_dbo_Products_ProductID">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Comments_dbo_Users_UserID">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Images_dbo_Products_ProductID">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Images" Type="Self.Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Images">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OrderDetails_dbo_Orders_OrderID">
+    <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OrderDetails_dbo_Products_ProductID">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Orders_dbo_Users_UserID">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Products_dbo_ProductDetails_ProductDetailID">
+    <End Role="ProductDetails" Type="Self.ProductDetail" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ProductDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SaleLaptopSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Images" EntityType="Self.Image" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="ProductDetails" EntityType="Self.ProductDetail" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_dbo_Products_dbo_Brands_BrandID" Association="Self.FK_dbo_Products_dbo_Brands_BrandID">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Products_dbo_Categories_CategoryID" Association="Self.FK_dbo_Products_dbo_Categories_CategoryID">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Comments_dbo_Products_ProductID" Association="Self.FK_dbo_Comments_dbo_Products_ProductID">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Comments_dbo_Users_UserID" Association="Self.FK_dbo_Comments_dbo_Users_UserID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Images_dbo_Products_ProductID" Association="Self.FK_dbo_Images_dbo_Products_ProductID">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Images" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OrderDetails_dbo_Orders_OrderID" Association="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OrderDetails_dbo_Products_ProductID" Association="Self.FK_dbo_OrderDetails_dbo_Products_ProductID">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Orders_dbo_Users_UserID" Association="Self.FK_dbo_Orders_dbo_Users_UserID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Products_dbo_ProductDetails_ProductDetailID" Association="Self.FK_dbo_Products_dbo_ProductDetails_ProductDetailID">
+      <End Role="ProductDetails" EntitySet="ProductDetails" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
