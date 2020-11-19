@@ -37,6 +37,7 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHistory = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -44,7 +45,7 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.btnHistory = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,12 +62,13 @@
             this.barButtonItem5,
             this.btnExit,
             this.btnUser,
-            this.btnHistory});
+            this.btnHistory,
+            this.barButtonItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(6);
-            this.ribbon.MaxItemId = 10;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ribbon.MaxItemId = 11;
             this.ribbon.Name = "ribbon";
-            this.ribbon.OptionsMenuMinWidth = 644;
+            this.ribbon.OptionsMenuMinWidth = 805;
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -138,6 +140,15 @@
             this.btnUser.Name = "btnUser";
             this.btnUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUser_ItemClick);
             // 
+            // btnHistory
+            // 
+            this.btnHistory.Caption = "History";
+            this.btnHistory.Id = 9;
+            this.btnHistory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHistory.ImageOptions.Image")));
+            this.btnHistory.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHistory.ImageOptions.LargeImage")));
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHistory_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -162,6 +173,7 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnUser);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnHistory);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "User management";
             // 
@@ -184,19 +196,19 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 675);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(6);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1456, 30);
             // 
-            // btnHistory
+            // barButtonItem1
             // 
-            this.btnHistory.Caption = "History";
-            this.btnHistory.Id = 9;
-            this.btnHistory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnHistory.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHistory_ItemClick);
+            this.barButtonItem1.Caption = "Report Bill All Day ";
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
             // frmManegement
             // 
@@ -234,5 +246,6 @@
         private DevExpress.XtraBars.BarButtonItem btnUser;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnHistory;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

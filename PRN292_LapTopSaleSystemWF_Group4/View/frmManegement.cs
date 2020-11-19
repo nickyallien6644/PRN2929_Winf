@@ -85,5 +85,15 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             history.WindowState = FormWindowState.Maximized;
             history.Show();
         }
+
+        private void barButtonItem1_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            //BillReport report = new BillReport();
+            //report.RequestParameters = false;
+            //report.ExportToPdf("BillofDate.pdf");
+            Test111 report = new Test111();
+            report.RequestParameters = false;
+            report.ExportToPdf("Test.pdf");
+        }
     }
 }
