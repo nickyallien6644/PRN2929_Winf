@@ -128,9 +128,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PRN292_LapTopSaleSystemWF_Group4.Properties.Resources.Lock_2_512;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 170);
+            this.pictureBox1.Location = new System.Drawing.Point(46, 170);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 54);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;

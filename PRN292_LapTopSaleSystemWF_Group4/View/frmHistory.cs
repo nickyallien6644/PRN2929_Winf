@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
+using System.Drawing;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using PRN292_LapTopSaleSystemWF_Group4.Model;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.View
-{   
-    public partial class HistoryControl : UserControl
+{
+    public partial class frmHistory : DevExpress.XtraEditors.XtraForm
     {
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         int id = -1;
-        public HistoryControl()
+        frmManegement main;
+        public frmHistory(frmManegement main)
         {
             InitializeComponent();
+            this.main = main;
             load();
             getValue();
         }
@@ -31,7 +34,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             cbbProduct.DisplayMember = "Name";
 
             List<int> day = new List<int>();
-            for(int i = 1; i <= 31; i++)
+            for (int i = 1; i <= 31; i++)
             {
                 day.Add(i);
             }
@@ -69,9 +72,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     User = user.Fullname,
                     Date = order.date
                 };
-            dtHistory.DataSource = list.ToList();
-            dtHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtTableBrand.DataSource = list.ToList();
+            dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void cbbUser_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,9 +98,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     User = user.Fullname,
                     Date = order.date
                 };
-            dtHistory.DataSource = list.ToList();
-            dtHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtTableBrand.DataSource = list.ToList();
+            dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void cbbProduct_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,14 +124,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     User = user.Fullname,
                     Date = order.date
                 };
-            dtHistory.DataSource = list.ToList();
-            dtHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            load();
+            dtTableBrand.DataSource = list.ToList();
+            dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void cbbDay_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,9 +150,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     User = user.Fullname,
                     Date = order.date
                 };
-            dtHistory.DataSource = list.ToList();
-            dtHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtTableBrand.DataSource = list.ToList();
+            dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void cbbMonth_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,9 +176,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     User = user.Fullname,
                     Date = order.date
                 };
-            dtHistory.DataSource = list.ToList();
-            dtHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtTableBrand.DataSource = list.ToList();
+            dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void cbbYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,9 +202,37 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     User = user.Fullname,
                     Date = order.date
                 };
-            dtHistory.DataSource = list.ToList();
-            dtHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtTableBrand.DataSource = list.ToList();
+            dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (dtTableBrand.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+                excelApp.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < dtTableBrand.Columns.Count + 1; i++)
+                {
+                    excelApp.Cells[1, i] = dtTableBrand.Columns[i - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dtTableBrand.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dtTableBrand.Columns.Count; j++)
+                    {
+                        excelApp.Cells[i + 2, j + 1] = dtTableBrand.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                excelApp.Columns.AutoFit();
+                excelApp.Visible = true;
+            }
         }
     }
 }

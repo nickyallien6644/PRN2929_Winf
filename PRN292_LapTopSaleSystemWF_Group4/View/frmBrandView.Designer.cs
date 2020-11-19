@@ -112,12 +112,12 @@
             this.dtTableBrand.AllowUserToAddRows = false;
             this.dtTableBrand.AllowUserToDeleteRows = false;
             this.dtTableBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtTableBrand.Location = new System.Drawing.Point(13, 13);
+            this.dtTableBrand.Location = new System.Drawing.Point(13, -1);
             this.dtTableBrand.Margin = new System.Windows.Forms.Padding(4);
             this.dtTableBrand.Name = "dtTableBrand";
             this.dtTableBrand.ReadOnly = true;
             this.dtTableBrand.RowHeadersWidth = 51;
-            this.dtTableBrand.Size = new System.Drawing.Size(1457, 716);
+            this.dtTableBrand.Size = new System.Drawing.Size(1457, 730);
             this.dtTableBrand.TabIndex = 8;
             this.dtTableBrand.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtTableBrand_CellMouseClick);
             // 
@@ -133,12 +133,6 @@
             this.btnSearch.Text = "Refresh";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // backgroundWorker1
-            // 
-            // 
-            // backgroundWorker2
-            // 
             // 
             // btnExport
             // 

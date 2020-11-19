@@ -20,6 +20,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         frmCateView category;
         frmProductView product;
         frmUserView userView;
+        frmHistory history;
 
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         public frmManegement(User user)
@@ -75,6 +76,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             userView.MdiParent = this;
             userView.WindowState = FormWindowState.Maximized;
             userView.Show();
+        }
+
+        private void btnHistory_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            history = new frmHistory(this);
+            history.MdiParent = this;
+            history.WindowState = FormWindowState.Maximized;
+            history.Show();
         }
     }
 }
